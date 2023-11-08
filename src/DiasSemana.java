@@ -8,7 +8,7 @@ public class DiasSemana {
 		int semana = 0;
 		int diaSemana;
         int ano=0;
-		while (mes<11) {
+		while (mes<12) {
 			semana= 0;
 			
 			switch (ano){
