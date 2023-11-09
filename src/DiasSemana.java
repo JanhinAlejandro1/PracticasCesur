@@ -7,27 +7,25 @@ public class DiasSemana {
 		Scanner teclado = new Scanner(System.in);
 		int mes = 0;
 		int semana = 0;
-		int diaSemana=1;
+		int diaSemana;
 		int ano = 0;
-		int totalDias = 0;
-		int mesCompleto = 0;
-		int semanaCompleta = 0;
+		int TotalDias = 0;
+		int mesCompleto=0;
 		int mesIncompleto = 0;
+		int semanaIcompleta= 0;
 		int diasSueltos=0;
+		
+		
+		mesCompleto=TotalDias/28;
+		
+		
 		do {
 
 			System.out.println("introduce un número");
-			totalDias = teclado.nextInt();
-			mesCompleto = totalDias / 28;
-			mesIncompleto=totalDias - (mesCompleto*28);
-			semanaCompleta= mesIncompleto/7;
-			diasSueltos= mesIncompleto -(semanaCompleta*7);
-			
-			
-		} while (totalDias > 336 || totalDias < 1);
+			TotalDias = teclado.nextInt();} 
+		while (TotalDias > 336 || TotalDias < 0);
 
-
-		while (mes < mesCompleto+1) {
+		  while (mes < mesCompleto+1) {
 			semana = 0;
 
 			switch (ano) {
@@ -69,11 +67,9 @@ public class DiasSemana {
 				break;
 			}
 			ano++;
-			
-
-			while (semana > semanaCompleta+2) {
+			while (semana < 4) {
 				diaSemana = 1;
-				while (diaSemana < diasSueltos+1) {
+				while (diaSemana < 8) {
 					switch (diaSemana) {
 					case 1:
 
@@ -121,9 +117,8 @@ public class DiasSemana {
 			mes++;
 			System.out.println();
 			;
-	
+		}
+		  teclado.close();
+		  
 	}
-		teclado.close();
-	}
-	
 }
