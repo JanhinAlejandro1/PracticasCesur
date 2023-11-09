@@ -16,16 +16,15 @@ public class DiasSemana {
 		int diasSueltos=0;
 		
 		
-		mesCompleto=TotalDias/28;
-		
 		
 		do {
 
 			System.out.println("introduce un número");
-			TotalDias = teclado.nextInt();} 
-		while (TotalDias > 336 || TotalDias < 0);
+			TotalDias = teclado.nextInt();
+		    mesCompleto=TotalDias/28;
+		}while (TotalDias > 336 || TotalDias < 0);
 
-		  while (mes < mesCompleto+1) {
+		  while (mes < mesCompleto) {
 			semana = 0;
 
 			switch (ano) {
