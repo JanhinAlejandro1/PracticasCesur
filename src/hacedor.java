@@ -24,6 +24,13 @@ public class hacedor {
 	// devuvelve el número de ocurrencia de un caracater pasado como parámetro en el
 	// STring pasado
 	static int numOcurrenciasChar(String cadena, char caracter) {
+		int contador = 0;
+		for (int indice = 1; indice <= cadena.length(); indice++) {
+			if (cadena.charAt(indice) == caracter) {
+				contador++;
+			}
 
+		}
+		return contador;
 	}
 }
