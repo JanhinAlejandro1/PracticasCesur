@@ -1,10 +1,27 @@
 package alumnoCesur;
 
 class Clase {
-
+	private Profesor profesor;
 	private String nombre;
 	private int numAlumnos;
+	static final int TOTALALUMNOS = 15;
 	private Alumno[] alumnos;
+
+	
+	public Clase(String nombre) {
+
+		numAlumnos = 0;
+		this.nombre = nombre;
+		alumnos = new Alumno[TOTALALUMNOS];
+	}
+
+	public Profesor getProfesor() {
+		return profesor;
+	}
+
+	public void setProfesor(Profesor profesor) {
+		this.profesor = profesor;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -14,7 +31,7 @@ class Clase {
 		this.nombre = nombre;
 	}
 
-	static final int TOTALALUMNOS = 15;
+
 
 	public int getNumAlumnos() {
 		return numAlumnos;
@@ -36,15 +53,9 @@ class Clase {
 		return TOTALALUMNOS;
 	}
 
-	public Clase(String nombre) {
-
-		numAlumnos = 0;
-		this.nombre = nombre;
-		alumnos = new Alumno[TOTALALUMNOS];
-	}
-
+	//METODOS
 	public String toString() {
-		return "[Clase:" + nombre + " numero alumno: " + numAlumnos + "]";
+		return "[Clase:" + nombre + ", Profesor: "+ profesor+" + numAlumnos  " + numAlumnos + "]";
 
 	}
 
