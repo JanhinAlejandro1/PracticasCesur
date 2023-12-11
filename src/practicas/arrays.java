@@ -1,3 +1,4 @@
+package practicas;
 import java.util.Random;
 
 public class arrays {
@@ -14,6 +15,7 @@ public class arrays {
 		int[] listaImpar;
 		int contadorP;
 		int contadorI;
+	
 		System.out.print("el array inicial es: [");
 		for (int c = 0; c <= 9; c++) {
 
@@ -40,6 +42,10 @@ public class arrays {
 		contadorP = 0;
 		contadorI = 0;
 		for (int indice = 0; indice < listaInteger.length; indice++) {
+		
+				listaInteger[indice] = aleatorio;
+				}
+		for (int indice = 0; indice < listaInteger.length; indice++) {
 			if (listaInteger[indice] % 2 == 0) {
 				listaPar[contadorP] = listaInteger[indice];
 				contadorP++;
@@ -61,6 +67,6 @@ public class arrays {
 		for (int indice = 0; indice < contadorImpar; indice++)
 			System.out.print(listaImpar[indice]+",");
 		System.out.println("]");
-	}
+	}//fin array
 
 }
