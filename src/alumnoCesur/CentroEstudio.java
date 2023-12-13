@@ -59,5 +59,8 @@ public class CentroEstudio {
 	public int getMAX_CLASES() {
 		return MAX_CLASES;
 	}
+	public String toString() {
+		return ("["+ "Centro: "+nombre+", CAPACIDAD { Clases:"+ MAX_CLASES+",Admin:"+MAX_ADMIN+"}]");
+	}
 
 }
