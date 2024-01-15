@@ -39,6 +39,7 @@ public class Insecto extends Animal {
 class Enemigo{
 	private String nombre;
 //getter y stter
+	
 	public String getNombre() {
 		return nombre;
 	}
