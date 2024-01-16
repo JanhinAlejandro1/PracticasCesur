@@ -3,18 +3,11 @@ package practicas;
 public class SimuladorLista {
 
 	public static void main(String[] args) {
-		
-		
-	}
-Miarray yo =new Miarray(100);
-for (int=0; i<100;i++) {
-	yo.insertarValor(i+10);
-}
-	
 
-
-
-
+		Miarray yo = new Miarray(100);
+		for (int i = 0; i < 100; i++) {
+			yo.insertarValor(i + 10);
+		}
 
 		Miarray antonio;
 		Miarray anthony;
@@ -83,14 +76,14 @@ class Miarray {
 		}
 	}
 
-	public void insertarValor( int valor) {
-    if (numElem==myArray.length ) {
-    	System.out.println(" array lleno, no se ha insertado elemento");
-    
-    }else {
-		myArray[numElem]=valor;
-		numElem ++;
-    }
+	public void insertarValor(int valor) {
+		if (numElem == myArray.length) {
+			System.out.println(" array lleno, no se ha insertado elemento");
+
+		} else {
+			myArray[numElem] = valor;
+			numElem++;
+		}
 	}
 
 }
