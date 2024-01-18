@@ -1,49 +1,88 @@
 package practicas;
 
+import java.util.Random;
+
 public class SimuladorLista {
 
 	public static void main(String[] args) {
 
-		Miarray yo = new Miarray(100);
+		Random aleatorio = new Random();
+
+		Miarray lista = new Miarray(100);
+
+		System.out.println();
+		int contadorPar = 0;
+		int contadorImpar = 0;
+//insertar números
 		for (int i = 0; i < 100; i++) {
-			yo.insertarValor(i + 10);
+			lista.insertarValor(aleatorio.nextInt(10));
+			
+		}
+		// números pares
+		System.out.println("los numero pares son:");
+		// contador de pares
+		for (int i = 0; i < 100; i++) {
+			if (lista.getIntMiArray(i) % 2 == 0) {
+				contadorPar++;
+
+			} else {
+				contadorImpar++;
+			}
+
+		}
+		// meter pares e impares
+		Miarray arrayPar = new Miarray(contadorPar);
+		Miarray arrayImpar = new Miarray(contadorImpar);
+		for (int i = 0; i < 100; i++) {
+			if (lista.getIntMiArray(i) % 2 == 0) {
+				arrayPar.insertarValor(lista.getIntMiArray(i));
+
+			} else {
+				arrayImpar.insertarValor(lista.getIntMiArray(i));
+
+			}
+
 		}
 
-		Miarray antonio;
-		Miarray anthony;
-		antonio = new Miarray();
-		anthony = new Miarray(40);
+		for (int i = 0; i < 100; i++) {
+			if (lista.getIntMiArray(i) % 2 == 0) {
+				System.out.print(lista.getIntMiArray(i) + " ");
+			}
+		}
+		System.out.println();
 
-		antonio.numElem = 4;
+		for (int i = 0; i < arrayPar.getNumElem(); i++) {
 
-		anthony.numElem = 8;
+			System.out.print(arrayPar.getIntMiArray(i) + " ");
+		}
+
 	}
 }
 
 // almacena enteros positivos
 class Miarray {
 	// atributos
-	public int[] myArray;
-	public int numElem;
-	public static final int LONGITUD = 10;
+	private int[] miArray;
+	private int numElem;
+	private static final int LONGITUD = 10;
 
 //constructor
 	Miarray(int longitud) {
 		numElem = 0;
-		myArray = new int[longitud];
+		miArray = new int[longitud];
 		for (int c = 0; c < longitud; c = c + 1) {
-			myArray[c] = -1;
+			miArray[c] = -1;
 		}
 	}
 
 	Miarray() {
 		numElem = 0;
 
-		myArray = new int[10];
-		myArray = new int[LONGITUD];
-		for (int i = 0; i < myArray.length; i = i + 1) {
+		miArray = new int[10];
+		miArray = new int[LONGITUD];
+		for (int i = 0; i < miArray.length; i = i + 1) {
 
-			myArray[i] = -1;
+			miArray[i] = -1;
 		}
 	}
 
@@ -56,14 +95,14 @@ class Miarray {
 		this.numElem = numElem;
 	}
 
-	public int[] getMyArray() {
-		return myArray;
+	public int[] getMiArray() {
+		return miArray;
 	}
 
-	public int getIntMyArray(int posicion) {
+	public int getIntMiArray(int posicion) {
 
-		if ((posicion < myArray.length) && (posicion > 0)) {
-			return myArray[posicion];
+		if ((posicion < miArray.length) && (posicion >= 0)) {
+			return miArray[posicion];
 
 		} else {
 			return -1;
@@ -71,17 +110,17 @@ class Miarray {
 	}
 
 	public void resetrar() {
-		for (int c = 0; c < myArray.length; c = c + 1) {
-			myArray[c] = -1;
+		for (int c = 0; c < miArray.length; c = c + 1) {
+			miArray[c] = -1;
 		}
 	}
 
 	public void insertarValor(int valor) {
-		if (numElem == myArray.length) {
+		if (numElem == miArray.length) {
 			System.out.println(" array lleno, no se ha insertado elemento");
 
 		} else {
-			myArray[numElem] = valor;
+			miArray[numElem] = valor;
 			numElem++;
 		}
 	}
@@ -91,9 +130,9 @@ class Miarray {
 		if (numElem == 0) {
 			return -1;
 		} else {
-			temp = myArray[numElem - 1];
+			temp = miArray[numElem - 1];
 			numElem--;
-			myArray[numElem] = -1;
+			miArray[numElem] = -1;
 			return temp;
 
 		}
@@ -108,14 +147,14 @@ class Miarray {
 
 		else {
 			numElem--;
-			temp = myArray[0];
+			temp = miArray[0];
 			// reducir en 1 num elem y meter los valores en posicion anterios
 
 			for (int i = 0; i < numElem - 1; i++) {
-				myArray[i] = myArray[i + 1];
+				miArray[i] = miArray[i + 1];
 
 			}
-			myArray[numElem - 1] = -1;
+			miArray[numElem - 1] = -1;
 
 			numElem--;
 			return temp;
