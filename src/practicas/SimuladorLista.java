@@ -32,7 +32,7 @@ class Miarray {
 		numElem = 0;
 		myArray = new int[longitud];
 		for (int c = 0; c < longitud; c = c + 1) {
-			myArray[c] = 0;
+			myArray[c] = -1;
 		}
 	}
 
@@ -43,7 +43,7 @@ class Miarray {
 		myArray = new int[LONGITUD];
 		for (int i = 0; i < myArray.length; i = i + 1) {
 
-			myArray[i] = 0;
+			myArray[i] = -1;
 		}
 	}
 
@@ -72,7 +72,7 @@ class Miarray {
 
 	public void resetrar() {
 		for (int c = 0; c < myArray.length; c = c + 1) {
-			myArray[c] = 0;
+			myArray[c] = -1;
 		}
 	}
 
@@ -86,4 +86,40 @@ class Miarray {
 		}
 	}
 
+	public int sacarValorUltimo() {
+		int temp;
+		if (numElem == 0) {
+			return -1;
+		} else {
+			temp = myArray[numElem - 1];
+			numElem--;
+			myArray[numElem] = -1;
+			return temp;
+
+		}
+
+	}
+
+	public int sacarValorPrimer() {
+		int temp;
+		if (numElem == 0) {
+			return -1;
+		}
+
+		else {
+			numElem--;
+			temp = myArray[0];
+			// reducir en 1 num elem y meter los valores en posicion anterios
+
+			for (int i = 0; i < numElem - 1; i++) {
+				myArray[i] = myArray[i + 1];
+
+			}
+			myArray[numElem - 1] = -1;
+
+			numElem--;
+			return temp;
+
+		}
+	}
 }
