@@ -6,7 +6,7 @@ public class Piloto {
   private int horasVueloPiloto;
  private String rangoPiloto;
 public void mostrarPiloto() {
- System.out.println("el idPiloto es :"+idPiloto+", el nombre del piloto es "+nomPiloto+ "sus horas de vuelo son: "+ horasVueloPiloto+", su rango es: "+rangoPiloto );
+ System.out.println("el idPiloto es :"+idPiloto+", el nombre del piloto es "+nomPiloto+ ", sus horas de vuelo son: "+ horasVueloPiloto+", su rango es: "+rangoPiloto );
 }//contructor
 public Piloto(int idPiloto, String nomPiloto, int horasVueloPiloto, String rangoPiloto) {
 	super();
