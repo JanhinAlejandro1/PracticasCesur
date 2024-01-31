@@ -5,16 +5,16 @@ public class Turbo {
 	int idTurbo;
 	private final int RPM;
 	private final int TAMAÑO;
-	private final int ingeniero;
+	private Ingeniero INGENIERO;
 
 //contructor
-	public Turbo(int idTurbo, int ingeniero ) {
+	public Turbo(int idTurbo, Ingeniero INGENIERO) {
 		super();
 		Random aleatorio = new Random();
 		this.idTurbo = idTurbo;
 		this.RPM = aleatorio.nextInt(10);
 		this.TAMAÑO = aleatorio.nextInt(10);
-		this.ingeniero = ingeniero;
+		this.INGENIERO = INGENIERO;
 		
 		
 
@@ -37,13 +37,12 @@ public class Turbo {
 	return TAMAÑO;
 	}
 
-public int getIngeniero() {
-	return idTurbo;
+	public Ingeniero getIngeniero() {
+		return INGENIERO;
+	}
+	public void setIngeniero(Ingeniero ingeniero) {
+		this.INGENIERO = ingeniero;
 
-public void setIngeniero(Ingeniero ingeniero) {
-	this.ingeniero = ingeniero;
+	}
 }
 
-}
-
-}

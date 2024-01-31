@@ -1,22 +1,24 @@
 package formulaUno;
 
+import java.util.Random;
+
 public class Mecanico extends Persona{
 //atributos
-	private int velocidad;
+	private final int VELOCIDAD;
 	private int experiencia;
 	//constructor
 	public Mecanico(int edad, String nombre, int dni, int velocidad, int experiencia) {
 		super(edad, nombre, dni);
-		this.velocidad = velocidad;
+		Random aleatorio= new Random();
+		this.VELOCIDAD = aleatorio.nextInt(10);
 		this.experiencia = experiencia;
 	}
 	//getter y setter
 	public int getVelocidad() {
-		return velocidad;
+		return VELOCIDAD;
 	}
-	public void setVelocidad(int velocidad) {
-		this.velocidad = velocidad;
-	}
+	
+	
 	public int getExperiencia() {
 		return experiencia;
 	}
