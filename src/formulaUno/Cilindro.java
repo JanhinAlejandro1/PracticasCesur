@@ -1,43 +1,47 @@
 package formulaUno;
 
-import java.util.Random;
-
 public class Cilindro {
-	// atributos
-	private int IdCilindro;
-	private final int CAPACIDAD;
-	private final int MATERIAL;
-	private final Ingeniero INGENIERO;
 
-//contructor
-	public Cilindro(int idCilindro, Ingeniero iNGENIERO) {
-		super();
-		Random aleatorio = new Random();
-		this.IdCilindro = idCilindro;
-		this.CAPACIDAD = aleatorio.nextInt(10);
-		this.MATERIAL = aleatorio.nextInt(10);
-		this.INGENIERO = iNGENIERO;
+	// ATRIBUTOS.
+
+	private final int idCilindro;
+	private final int capacidad;
+	private final int material; // calidad del material entre 0 y 10. 10 es el mejor
+	private final Ingeniero ingeniero;
+	private final int trabajoIng;
+
+	// CONSTRUCTOR
+
+	public Cilindro(int idCilindro, int capacidad, int material, Ingeniero ingeniero) {
+		this.trabajoIng = ingeniero.trabajo();
+		this.idCilindro = idCilindro;
+		this.capacidad = capacidad;
+		this.material = material;
+		this.ingeniero = ingeniero;
+
 	}
 
-	// getter y setter
+	// GETTERS Y SETTERS
+
 	public int getIdCilindro() {
-		return IdCilindro;
+		return idCilindro;
 	}
 
-	public void setIdCilindro(int idCilindro) {
-		this.IdCilindro = idCilindro;
+	public int getCapacidad() {
+		return capacidad;
 	}
 
-	public int getCAPACIDAD() {
-		return CAPACIDAD;
+	public int getMaterial() {
+		return material;
 	}
 
-	public int getMATERIAL() {
-		return MATERIAL;
+	public Ingeniero getIngeniero() {
+		return ingeniero;
 	}
 
-	public Ingeniero getINGENIERO() {
-		return INGENIERO;
+	public int construido() {
+
+		return ((capacidad + material + trabajoIng) / 3);
 	}
 
 }
