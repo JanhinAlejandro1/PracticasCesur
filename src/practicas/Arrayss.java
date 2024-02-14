@@ -28,12 +28,43 @@ public class Arrayss {
 		max = teclado.nextInt();
 		System.out.println("cual es el minimo");
 		min = teclado.nextInt();
+int contadorPar=0;
+int contadorImpar=0;
+int [] arrayPar;
+int[] arrayImpar;
+int maxImpar=0;
+int maxPar=0;
 
 		for (int i = 0; i < arrays.length; i++) {
 			arrays[i] = aleatorio.nextInt(min, max);
 			System.out.println(arrays[i]+ " ");
+			if (arrays[i]%2==0 ) {
+				maxPar++;
+			}
+			else {
+				maxImpar++;
+				
+			}
 		}
+		arrayPar= new int[maxPar];
+		arrayImpar=new int[maxImpar];
+		for (int i = 0; i < arrays.length; i++) {
+			arrays[i] = aleatorio.nextInt(min, max);
+			System.out.println(arrays[i]+ " ");
+			if (arrays[i]%2==0 ) {
+				arrays [i]= arrayPar [contadorPar];
+				contadorPar++;
+				System.out.println(arrays[i]);
+			}
+			else {
+			arrays[i]=arrayImpar[contadorPar];
+			contadorPar++;
+			System.out.println(arrays[i]);
+			}
+			}
+			
 		
 		
+	
 	}
 }
