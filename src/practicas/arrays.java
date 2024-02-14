@@ -43,7 +43,7 @@ public class arrays {
 		contadorI = 0;
 		for (int indice = 0; indice < listaInteger.length; indice++) {
 		
-				listaInteger[indice] =  aleatorio;
+				listaInteger[indice] =  aleatorio.nextInt();
 				}
 		for (int indice = 0; indice < listaInteger.length; indice++) {
 			if (listaInteger[indice] % 2 == 0) {

@@ -1,26 +1,51 @@
 package animales;
-
+import java.util.Random;
 public class UsoAnimal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Mamifero perro = new Mamifero("perro", 15, true);
-		Insecto hormiga = new Insecto("hormiga", 1, false, true, "oso hormiguero");
-		System.out.println("El animal:" + hormiga.getNombre() + " tiene alas?:" + hormiga.isAlas());
-		System.out.println(hormiga.getNombre() + " tiene de enemigo a:" + hormiga.getEnemigo().getNombre());
-
-		Insecto atomica;
-		Insecto volantona;
-		volantona=hormiga;
-		atomica = new Insecto(hormiga.getNombre() + "atomica", hormiga.getTpvida(), hormiga.isAlas(),
-				hormiga.isAntenas(), hormiga.getEnemigo().getNombre()
-				);
+		// crear array de 10 enteros q se llame enteros
+		Random aleatorio = new Random();
+		int[] enteros;
+		enteros = new int[10];
+		enteros[0] = 9;
+		for (int i=1; i<enteros.length; i++) {
+			enteros[i]= aleatorio.nextInt(10);
+		}
 		
+		for (int i=0; i<enteros.length;i++) {
+			System.out.print(enteros[i]+" ");
+		}
+		System.out.println();
+		int numero = 9;
+			//	aleatorio.nextInt(10);
 		
+		// quiero saber si est� numero en el array.
 		
-		System.out.println("El animal "+ hormiga.getNombre()+" tiene alas?" + hormiga.isAlas() );
-		System.out.println("El animal "+ atomica.getNombre()+" tiene alas?" + hormiga.isAlas() );
-		System.out.println("El animal "+ volantona.getNombre()+" tiene alas?" + hormiga.isAlas() );
+		boolean encontrado = false;
+		int i = 0;
+		int contador = 0;
+		int posicion=-1;
+		int[] posiciones = new int[enteros.length];
+		while (i<enteros.length) {
+			if (numero==enteros[i]) {
+				encontrado=true;
+				posiciones[contador] = i;
+				contador++;
+			}
+			i++;
+		} // fin while
+		
+		if (encontrado) {
+			System.out.println("Encontrado "+ numero+":"+ encontrado);
+			System.out.println("numero de ocurrencias: "+contador);
+			for (int j=0; j<contador; j++) {
+				System.out.print(posiciones[j]+" ");
+			}
+			
+		} else {
+			System.out.println("no encontrado");
+			System.out.println("Posici�n: "+posicion);
+		}
 		
 		
 		
