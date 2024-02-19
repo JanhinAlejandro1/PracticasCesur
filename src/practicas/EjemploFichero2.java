@@ -55,7 +55,7 @@ public class EjemploFichero2 {
 				try {
 					entrada.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 
